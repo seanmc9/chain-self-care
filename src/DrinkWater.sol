@@ -10,6 +10,10 @@ contract DrinkWater {
     mapping(address => uint256) public lastAddressDrink;
 
     error CanOnlyDrinkEvery8Hours();
+    
+    function getAllAddressesThatHaveDrank() public view returns (address[] memory) {
+        return addressesThatHaveDrank;
+    }
 
     function drinkWater() public {
         if (!hasAddressDrank[msg.sender]) {
