@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.19;
 
 contract DrinkWater {
     uint256 constant public SECONDS_IN_EIGHT_HOURS = 28800;
