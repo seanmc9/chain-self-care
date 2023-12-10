@@ -2,7 +2,7 @@
 pragma solidity ^0.8.13;
 
 contract DrinkWater {
-    uint256 constant SECONDS_IN_EIGHT_HOURS = 28800;
+    uint256 constant public SECONDS_IN_EIGHT_HOURS = 28800;
 
     address[] public addressesThatHaveDrank;
     mapping(address => bool) public hasAddressDrank;
