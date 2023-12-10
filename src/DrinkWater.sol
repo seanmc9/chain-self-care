@@ -15,6 +15,19 @@ contract DrinkWater {
         return addressesThatHaveDrank;
     }
 
+    function getAllAddressesTotalDrinks()
+        public
+        view
+        returns (address[] memory addresses, uint256[] memory totalDrinks)
+    {
+        address[] memory addressesMemVar = addressesThatHaveDrank;
+        uint256[] memory totalDrinksArray = new uint256[](addressesMemVar.length);
+        for (uint256 i = 0; i < addressesMemVar.length; i++) {
+            totalDrinksArray[i] = totalNumAddressDrinks[addressesMemVar[i]];
+        }
+        return (addressesMemVar, totalDrinksArray);
+    }
+
     function drinkWater() public {
         if (!hasAddressDrank[msg.sender]) {
             lastAddressDrink[msg.sender] = block.timestamp;
